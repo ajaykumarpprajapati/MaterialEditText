@@ -14,6 +14,7 @@ class MainActivity : AppCompatActivity() {
     private var userNameAppCompatEditText: AppCompatEditText? = null
     private var passwordAppCompatEditText: AppCompatEditText? = null
     private var userInputLayout: TextInputLayout? = null
+    private var passwordInputLayout: TextInputLayout? = null
     private var parentLayout: RelativeLayout? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,6 +28,7 @@ class MainActivity : AppCompatActivity() {
         userNameAppCompatEditText = findViewById(R.id.username_edit_text)
         passwordAppCompatEditText = findViewById(R.id.password_edit_text)
         userInputLayout = findViewById(R.id.username_text_input_layout)
+        passwordInputLayout = findViewById(R.id.password_text_input_layout)
         parentLayout?.setOnClickListener(null)
         userNameAppCompatEditText?.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(p0: Editable?) {
@@ -53,6 +55,8 @@ class MainActivity : AppCompatActivity() {
                 userInputLayout?.isErrorEnabled = false
             }
         }
+        passwordInputLayout?.isCounterEnabled = true
+        passwordInputLayout?.counterMaxLength = 20
 
     }
 }
